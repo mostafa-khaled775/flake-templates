@@ -26,6 +26,7 @@
       templates = {
         dev-flake = {
           path = ./dev-flake;
+          description = "A general development flake";
         };
       };
 
