@@ -38,7 +38,8 @@
         pre-commit-check = pre-commit-hooks.lib.${pkgs.system}.run {
           src = ./.;
           hooks = {
-            nixfmt-rfc-style.enable = true;
+            treefmt.enable = true;
+            treefmt.package = treefmtEval.${pkgs.system}.config.build.wrapper;
             deadnix.enable = true;
           };
         };
