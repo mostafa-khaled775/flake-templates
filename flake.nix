@@ -23,14 +23,13 @@
       treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
     in
     {
-      templates = {
+      templates = rec {
         dev-flake = {
           path = ./dev-flake;
           description = "A general development flake";
         };
+        default = dev-flake;
       };
-
-      defaultTemplate = self.templates.dev-flake;
 
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
       checks = eachSystem (pkgs: {
