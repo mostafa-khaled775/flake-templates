@@ -28,6 +28,10 @@
           path = ./dev-flake;
           description = "A general development flake";
         };
+        rust = {
+          path = ./rust;
+          description = "Rust project template";
+        };
         default = dev-flake;
       };
 
